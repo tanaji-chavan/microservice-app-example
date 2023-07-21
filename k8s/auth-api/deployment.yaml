@@ -6,10 +6,13 @@ metadata:
   name: auth-api
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: microservice-app-example   # <-- Match the selector label to the template label
   template:
     metadata:
       labels:
-        app: microservice-app-example
+        app: microservice-app-example   # <-- Match the template label to the selector label
         service: auth-api
     spec:
       containers:

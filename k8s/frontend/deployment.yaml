@@ -6,6 +6,10 @@ metadata:
   name: frontend
 spec:
   replicas: 1
+  selector:   # Add the missing selector field
+    matchLabels:
+      app: microservice-app-example   # <-- Match the selector label to the template label
+      service: frontend               # <-- Match the selector label to the template label
   template:
     metadata:
       labels:
